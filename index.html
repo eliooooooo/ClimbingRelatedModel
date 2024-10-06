@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prédiction Escalade</title>
+    <title>Climbind related model</title>
+    <link rel="stylesheet" href="./dist/style.css">
     <script>
         async function sendQuery() {
             const query = document.getElementById('query').value;
@@ -23,8 +24,8 @@
         }
     </script>
 </head>
-<body>
-    <h1>Prédiction Escalade</h1>
+<body class="bg-gray-50">
+    <h1>Entrez une recherche</h1>
     <input type="text" id="query" placeholder="Entrez une requête d'escalade">
     <button onclick="sendQuery()">Envoyer</button>
     <p id="result"></p>

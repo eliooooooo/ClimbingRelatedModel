@@ -27,7 +27,7 @@ X_padded = pad_sequences(X_sequences, maxlen=100)
 
 # Créer le modèle
 model = Sequential()
-model.add(Embedding(input_dim=5000, output_dim=64, input_length=100))
+model.add(Embedding(input_dim=5000, output_dim=64))
 model.add(LSTM(128, return_sequences=True))
 model.add(Dropout(0.5))
 model.add(LSTM(64))

@@ -2,3 +2,5 @@ climbing_related.h5
 tokenizer.pickle
 /dist
 node_modules
+
+.venv

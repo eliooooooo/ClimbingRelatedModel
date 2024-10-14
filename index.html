@@ -20,14 +20,47 @@
 
             // Obtenir la réponse JSON
             const data = await response.json();
-            document.getElementById('result').innerText = `Résultat: ${data.prediction}`;
+            let pourcentage = String(data.prediction).substring(2,4);
+            document.getElementById('result').innerText = `Votre requête est liée à l'escalade à ${pourcentage}% `;
         }
     </script>
 </head>
-<body class="bg-gray-50">
-    <h1>Entrez une recherche</h1>
-    <input type="text" id="query" placeholder="Entrez une requête d'escalade">
-    <button onclick="sendQuery()">Envoyer</button>
-    <p id="result"></p>
+<body class="bg-gray-100">
+    <header class="container bg-gray-900 mx-auto flex flex-row items-center gap-10 p-6 rounded mt-4 justify-between">
+        <h1 class="text-2xl font-bold text-center text-white">Climbing related model</h1>
+        <a href="https://github.com/eliooooooo/ClimbingRelatedModel" class="text-white">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+            </svg>
+        </a>
+    </header>
+    <main class="container mx-auto mt-6">
+        <div class="mx-auto w-full text-center flex flex-col gap-4">
+            <h1 class="text-3xl text-gray-900 font-bold mt-6">Tester le modèle</h1>
+            <p>Entrez une requête pour savoir si elle est liée à l'escalade ou non.</p>
+            <div class="flex flex-row gap-4 justify-center w-3/4 mx-auto">
+                <input class="w-full p-4 rounded border-2 border-solid border-gray-900" type="text" id="query" placeholder="Entrez une requête">
+                <button class="bg-gray-900 px-5 rounded text-white" onclick="sendQuery()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                    </svg>
+                </button>
+            </div>
+            <p id="result"></p>
+        </div>
+        <div class="mt-10" >
+            <p class="text-gray-600">XX résultats trouvés</p>
+            <div class="mt-top grid grid-cols-12 gap-4 [&>div]:col-span-4 [&>div]:h-72 [&>div]:bg-gray-400">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </main>
 </body>
 </html>

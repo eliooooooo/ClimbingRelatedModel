@@ -11,6 +11,10 @@ To install the project, there is some requirements :
 ```bash
 npm install
 ```
+**Step 2.5** : if needed, create or use python venv
+```bash
+source ./venv/bin/activate
+```
 **Step 3** : Install python dependencies
 ```bash
 pip install -r requirements.txt
@@ -24,4 +28,8 @@ python train.py
 ```bash
 cd ..  
 python app.py
-```  
+```
+or  
+```bash
+gunicorn -w 4 -b 127.0.0.1:5000 app:app
+```
